@@ -1,9 +1,13 @@
 const express = require('express');
 const chalk = require('chalk');
+const cors = require('cors');
 
 const app = express();
 
-app.get('/', (req, res) => {
+app.use(cors());
+
+app.get('/api/helloworld', (req, res) => {
+    console.log('Hitted')
     res.send('Hello world');
 });
 
