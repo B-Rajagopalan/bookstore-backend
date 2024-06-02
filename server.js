@@ -1,13 +1,18 @@
 const express = require('express');
 const chalk = require('chalk');
 const cors = require('cors');
+const authRouter = require('./routers/authRouter');
+const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(cors());
+// not needed since we use proxy config in angular
+//app.use(cors());
+app.use(bodyParser.json());
+
+app.use('/api/auth', authRouter);
 
 app.get('/api/helloworld', (req, res) => {
-    console.log('Hitted')
     res.send('Hello world');
 });
 
