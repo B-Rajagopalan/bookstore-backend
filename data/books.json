@@ -1,0 +1,27 @@
+[
+    {
+        "bookName": "Effective Java",
+        "author": "Joshua Bloch",
+        "publishedOn": "2008-05-28"
+    },
+    {
+        "bookName": "Clean Code: A Handbook of Agile Software Craftsmanship",
+        "author": "Robert C. Martin",
+        "publishedOn": "2008-08-01"
+    },
+    {
+        "bookName": "Java: The Complete Reference",
+        "author": "Herbert Schildt",
+        "publishedOn": "2018-11-09"
+    },
+    {
+        "bookName": "Head First Java",
+        "author": "Kathy Sierra, Bert Bates",
+        "publishedOn": "2005-02-09"
+    },
+    {
+        "bookName": "Design Patterns: Elements of Reusable Object-Oriented Software",
+        "author": "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",
+        "publishedOn": "1994-10-31"
+    }
+]

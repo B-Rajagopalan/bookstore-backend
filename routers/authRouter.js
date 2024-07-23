@@ -1,19 +1,27 @@
 const express = require('express');
-const User = require('../models/userModel')
+const User = require('../models/userModel');
+const jwt = require('jwt-simple');
+const bcrypt = require('bcrypt-nodejs');
 
 const router = express.Router();
 
 router.post('/login', async(req, res) => {
-    const user = await User.findOne({email: req.body.email});
+    const loginData = req.body;
+
+    const user = await User.findOne({email:loginData.email});
 
     if(!user) {
         return res.status(500).send('Invalid Credentials');
     }
 
-    if(user.password === req.body.password) {
-        return res.status(200).send(user);
-    }
-    res.status(500).send('Wrong Password');
+    bcrypt.compare(loginData.password, user.password, (err, isMatch) => {
+        if(!isMatch) {
+            return res.status(500).send('Invalid Credentials');
+        }
+        const payload = {subject: user._id};
+        const token = jwt.encode(payload, "123");
+        return res.status(200).json(token);
+    })
 });
 
 router.post('/register', (req, res) => {
@@ -32,4 +40,33 @@ router.post('/register', (req, res) => {
         });
 });
 
-module.exports = router;
+module.exports = {
+    router,
+    jwtAuth : // Reusable JWT Auth function
+    function (req, res, next) {
+        if(!req.header('authorization')) {
+            return res.status(401).send('Missing Auth Header');
+        }
+    
+        const tokenString = req.header('authorization');
+        const token = tokenString.split(' ')[1];
+    
+        let payload = null;
+        
+        if(token != 'null') {
+            try {
+                payload = jwt.decode(token, "123");
+            }
+            catch(e) {
+                return res.status(401).send('Invalid token')
+            }
+        }
+    
+        if(!payload) {
+            return res.status(401).send('Missing token');
+        }
+    
+        req.userId = payload.subject;
+        next();
+    }
+};
