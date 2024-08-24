@@ -14,6 +14,7 @@ adminRouter.get('/postBooks', async(req, res) => {
             bookName: booksData[i]['bookName'],
             author: booksData[i]['author'],
             publishedOn: booksData[i]['publishedOn'],
+            imgSource: booksData[i]['imgSource']
         });
     
         await book.save()

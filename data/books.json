@@ -2,26 +2,31 @@
     {
         "bookName": "Effective Java",
         "author": "Joshua Bloch",
-        "publishedOn": "2008-05-28"
+        "publishedOn": "2008-05-28",
+        "imgSource": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Dohdda5KY3zbhFzSbfHSnlPMh4lkP-a1gg&s"
     },
     {
         "bookName": "Clean Code: A Handbook of Agile Software Craftsmanship",
         "author": "Robert C. Martin",
-        "publishedOn": "2008-08-01"
+        "publishedOn": "2008-08-01",
+        "imgSource": "https://stancalau.ro/wp-content/uploads/2020/04/CleanCode.jpg"
     },
     {
         "bookName": "Java: The Complete Reference",
         "author": "Herbert Schildt",
-        "publishedOn": "2018-11-09"
+        "publishedOn": "2018-11-09",
+        "imgSource": "https://www.clankart.com/user-uploads/advert/Java_for_beginners1692109064921.jpg"
     },
     {
         "bookName": "Head First Java",
         "author": "Kathy Sierra, Bert Bates",
-        "publishedOn": "2005-02-09"
+        "publishedOn": "2005-02-09",
+        "imgSource": "https://media.karousell.com/media/photos/products/2024/7/26/head_first_java_a_learners_gui_1721984677_65d224f6.jpg"
     },
     {
         "bookName": "Design Patterns: Elements of Reusable Object-Oriented Software",
         "author": "Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides",
-        "publishedOn": "1994-10-31"
+        "publishedOn": "1994-10-31",
+        "imgSource": "https://i.ebayimg.com/images/g/EYsAAOSwaDRj9Gc8/s-l1200.webp"
     }
 ]
